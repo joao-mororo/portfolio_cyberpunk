@@ -1,0 +1,19 @@
+.main {
+    border: solid 1px var(--color-accent);
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10rem;
+    gap: .5rem;
+}
+
+.description {
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    gap: .7rem;
+}

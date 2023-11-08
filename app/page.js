@@ -1,95 +1,44 @@
+import ProjectCard from '@/components/ProjectCard'
 import Image from 'next/image'
+import { FaFileDownload } from 'react-icons/fa'
+import { BiLinkExternal } from "react-icons/bi";
 import styles from './page.module.css'
 
-export default function Home() {
+export default async function Home() {
+  const projects = await fetch('https://api.github.com/users/joao-mororo/repos').then((data) => data.json())
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      <section className={styles.home}>
+        <div className={styles.home_description}>
+          <h1>Olá, mundo!</h1>
+          <p>Meu nome é <span>João Vitor</span>, sou um <span>Desenvolvedor Web</span>, e aqui está um pouco do meu trabalho, espero que goste :)</p>
+          <button>Entre em contato</button>
         </div>
-      </div>
+        <div className={styles.home_image}>
+          <Image src="/images/Programmer-amico.svg" width={500} height={500} />
+        </div>
+      </section>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section id='#about' className={styles.about}>
+        <div style={{ width: '50%' }}>
+          <Image src="/images/VirtualRealityAmico.svg" width={500} height={500} />
+        </div>
+        <div style={{ width: '50%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: '1rem' }}>
+          <h1>Sobre mim</h1>
+          <p>Sou um desenvolvedor front-end altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas. Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em oferecer soluções completas e eficazes para os projetos de meus clientes. Interessado em todo espectro de frontend e um interesse crescente por backend.</p>
+          <button>Baixar CV <FaFileDownload /></button>
+        </div>
+      </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <section className={styles.projects}>
+        <h1>Esses são meus projetos no <a href='https://github.com/joao-mororo' target='_blank'>Github <BiLinkExternal /></a></h1>
+        <div className={styles.projects_grid}>
+          {projects.map((project) => (
+            <div key={project.id} style={{ width: '33.333%', padding: '.5rem' }}><ProjectCard data={project} /></div>
+          ))}
+        </div>
+      </section>
     </main>
   )
 }

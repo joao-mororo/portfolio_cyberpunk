@@ -1,7 +1,10 @@
-import { Inter } from 'next/font/google'
+import { Inter, VT323, Electrolize } from 'next/font/google'
+import Header from '@/components/Header'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const vt323 = VT323({ subsets: ['latin'], variable: '--font-vt323', display: 'swap', weight: '400' })
+const electrolize = Electrolize({ subsets: ['latin'], variable: '--font-electrolize', display: 'swap', weight: '400' })
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.variable} ${vt323.variable} ${electrolize.variable}`}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
