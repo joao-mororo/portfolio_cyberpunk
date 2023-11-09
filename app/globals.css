@@ -4,7 +4,8 @@
   --color-background: #01012b;
   --color-background-seconday: #005678;
   --color-text: #05d9e8;
-  --color-accent: #ff2a6d;
+  /* --color-accent: #ff2a6d; */
+  --color-accent: #ff0000;
 }
 
 * {
@@ -19,10 +20,11 @@ body {
   animation: gradient-animation 18s ease infinite;
 
   color: var(--color-text);
-  font-family: var(--font-electrolize);
+  /* font-family: var(--font-electrolize); */
+  font-family: var(--font-share-tech-mono);
 }
 
-button {
+.button {
   color: var(--color-accent);
   background-color: transparent;
   padding: 1rem;
@@ -31,15 +33,25 @@ button {
   font-weight: 700;
   min-width: 15rem;
   font-size: 1rem;
+  box-shadow: var(--color-accent) 0px 0px 10px 0px;
+  transition: .2s;
 }
 
-a {
+.button:hover {
+  box-shadow: var(--color-accent) 0px 0px 20px 0px;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+a,
+.a {
   color: var(--color-accent);
   transition: .2s;
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+.a:hover {
   opacity: .8;
 }
 

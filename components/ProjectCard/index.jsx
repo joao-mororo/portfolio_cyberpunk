@@ -6,6 +6,7 @@ const ProjectCard = async ({ data }) => {
   const languages = await fetch(
     `https://api.github.com/repos/joao-mororo/${data.name}/languages`
   ).then((res) => res.json());
+
   return (
     <div className={styles.main}>
       <h1>{data.name}</h1>

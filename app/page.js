@@ -13,21 +13,22 @@ export default async function Home() {
         <div className={styles.home_description}>
           <h1>Olá, mundo!</h1>
           <p>Meu nome é <span>João Vitor</span>, sou um <span>Desenvolvedor Web</span>, e aqui está um pouco do meu trabalho, espero que goste :)</p>
-          <button>Entre em contato</button>
+          <button className='button'>Entre em contato</button>
         </div>
         <div className={styles.home_image}>
-          <Image src="/images/Programmer-amico.svg" width={500} height={500} />
+          <img src="/images/Hello.webp" style={{ width: '100%' }} />
         </div>
       </section>
 
       <section id='#about' className={styles.about}>
-        <div style={{ width: '50%' }}>
-          <Image src="/images/VirtualRealityAmico.svg" width={500} height={500} />
+        <div style={{ width: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <img src="/images/guerreiro-cyberpunk.jpg" style={{ width: '60%' }} />
         </div>
         <div style={{ width: '50%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: '1rem' }}>
           <h1>Sobre mim</h1>
-          <p>Sou um desenvolvedor front-end altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas. Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em oferecer soluções completas e eficazes para os projetos de meus clientes. Interessado em todo espectro de frontend e um interesse crescente por backend.</p>
-          <button>Baixar CV <FaFileDownload /></button>
+          <p>Sou um Desenvolvedor Web altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas.</p>
+          <p>Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em me desenvolver cada vez mais, aprendendo novas tecnologias e melhorando minhas habilidades.</p>
+          <button className='button'>Baixar CV <FaFileDownload /></button>
         </div>
       </section>
 

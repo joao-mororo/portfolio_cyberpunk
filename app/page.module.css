@@ -38,8 +38,14 @@
   font-size: 1.5rem;
 }
 
+.about img {
+  border: solid 2px var(--color-accent);
+  box-shadow: var(--color-accent) 5px 5px;
+}
+
 .projects {
   text-align: center;
+  padding: 4rem 0;
 }
 
 .projects_grid {
