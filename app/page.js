@@ -20,7 +20,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id='#about' className={styles.about}>
+      <section className={styles.about}>
         <div style={{ width: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <img src="/images/guerreiro-cyberpunk.jpg" style={{ width: '60%' }} />
         </div>
@@ -29,6 +29,35 @@ export default async function Home() {
           <p>Sou um Desenvolvedor Web altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas.</p>
           <p>Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em me desenvolver cada vez mais, aprendendo novas tecnologias e melhorando minhas habilidades.</p>
           <button className='button'>Baixar CV <FaFileDownload /></button>
+        </div>
+      </section>
+
+      <section className={styles.experience}>
+        <div>
+          <h1>Formação acadêmica</h1>
+          <details>
+            <summary>Técnico em Desenvolvimento de Sistemas | 2018 - 2020</summary>
+            <p>Curso técnico realizado na ETE Edson Mororó Moura de Belo Jardim, em paralelo ao ensino médio.</p>
+          </details>
+          <details>
+            <summary>Superior em Análise e Desenvolvimento de Sistemas | 2021 - 2022</summary>
+            <p>Curso superior em Análise e Desenvolvimento de Sistemas realizado na Faculdade Pitágoras de Belo Jardim, Brasil.</p>
+          </details>
+          <details>
+            <summary>Curso Web Moderno | 2021 - 2022</summary>
+            <p>Curso online de Web Moderno com JavaScript realizado na Udemy.</p>
+          </details>
+        </div>
+        <div>
+          <h1>Experiência profissional</h1>
+          <details>
+            <summary>Baterias Moura | 2021 - 2022</summary>
+            <p>Responsável pelo desenvolvimento de projetos de automação, com foco no desenvolvimento de softwares, além de auxiliar a equipe no desenvolvimento de hardwares.</p>
+          </details>
+          <details open>
+            <summary>AEG Media | Desde 2023</summary>
+            <p>Como Desenvolvedor Web, responsável pela criação de Landing Pages e site para as empresas associadas à AEG Media.  </p>
+          </details>
         </div>
       </section>
 

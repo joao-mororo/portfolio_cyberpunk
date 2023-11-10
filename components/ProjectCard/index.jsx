@@ -18,7 +18,7 @@ const ProjectCard = async ({ data }) => {
       </p>
       <p className={styles.description}>{data.description}</p>
       <div className={styles.links}>
-        <a href={data.url} target="_blank">
+        <a href={data.html_url} target="_blank">
           Repositório <BiLinkExternal />
         </a>
         {data.homepage && (

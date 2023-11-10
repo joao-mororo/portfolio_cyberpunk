@@ -36,6 +36,7 @@
 .about {
   display: flex;
   font-size: 1.5rem;
+  padding: 3rem 0;
 }
 
 .about img {
@@ -43,9 +44,40 @@
   box-shadow: var(--color-accent) 5px 5px;
 }
 
+.experience {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 0;
+}
+
+.experience div {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.experience details {
+  width: 100%;
+  text-align: center;
+  border: solid 1px var(--color-accent);
+  padding: .5rem;
+  margin: .5rem 0;
+}
+
+.experience summary {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.experience p {
+  margin-top: 1rem;
+}
+
 .projects {
   text-align: center;
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 .projects_grid {
