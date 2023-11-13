@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { FaFileDownload } from 'react-icons/fa'
 import { BiLinkExternal } from "react-icons/bi";
 import styles from './page.module.css'
+import BlinkingText from '@/components/BlinkingText';
 
 export default async function Home() {
   const projects = await fetch('https://api.github.com/users/joao-mororo/repos').then((data) => data.json())
@@ -10,21 +11,22 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       <section className={styles.home}>
-        <div className={styles.home_description}>
+        <div className={styles.home_wrapper}>
           <h1>Olá, mundo!</h1>
           <p>Meu nome é <span>João Vitor</span>, sou um <span>Desenvolvedor Web</span>, e aqui está um pouco do meu trabalho, espero que goste :)</p>
           <button className='button'>Entre em contato</button>
         </div>
-        <div className={styles.home_image}>
-          <img src="/images/Hello.webp" style={{ width: '100%' }} />
+        <div className={styles.home_wrapper}>
+          {/* <img src="/images/Hello.webp" style={{ width: '100%' }} /> */}
+          <BlinkingText className={styles.home_blinking_text}>• こんにちは •</BlinkingText>
         </div>
       </section>
 
       <section className={styles.about}>
-        <div style={{ width: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className={styles.about_wrapper}>
           <img src="/images/guerreiro-cyberpunk.jpg" style={{ width: '60%' }} />
         </div>
-        <div style={{ width: '50%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', gap: '1rem' }}>
+        <div className={styles.about_wrapper}>
           <h1>Sobre mim</h1>
           <p>Sou um Desenvolvedor Web altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas.</p>
           <p>Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em me desenvolver cada vez mais, aprendendo novas tecnologias e melhorando minhas habilidades.</p>

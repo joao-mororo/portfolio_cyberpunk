@@ -1,15 +1,17 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import LocalFont from 'next/font/local'
 import { Inter, VT323, Electrolize, Share_Tech_Mono } from 'next/font/google'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css'
 
-// Google Fonts
+// Fonts
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const vt323 = VT323({ subsets: ['latin'], variable: '--font-vt323', display: 'swap', weight: '400' })
 const electrolize = Electrolize({ subsets: ['latin'], variable: '--font-electrolize', display: 'swap', weight: '400' })
 const share_tech_mono = Share_Tech_Mono({ subsets: ['latin'], variable: '--font-share-tech-mono', display: 'swap', weight: '400' })
+const cyberpunk = LocalFont({ src: '../fonts/Cyberpunk-Regular.ttf', variable: '--font-cyberpunk', display: 'swap' })
 
 export const metadata = {
   title: 'João Mororó - Full Stack Developer',
@@ -19,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${vt323.variable} ${electrolize.variable} ${share_tech_mono.variable}`}>
+      <body className={`${inter.variable} ${vt323.variable} ${electrolize.variable} ${share_tech_mono.variable} ${cyberpunk.variable}`}>
         <Header />
         {children}
         <Footer />

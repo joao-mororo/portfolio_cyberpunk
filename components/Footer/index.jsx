@@ -16,31 +16,19 @@ const Footer = () => {
   return (
     <footer className={styles.main}>
       <div className={styles.wrapper}>
-        <h1>João Mororó</h1>
+        powered by<h1>João Mororó</h1>all rights reserved
       </div>
       <div className={styles.wrapper}>
-        <ul className={styles.socials_list}>
-          <li>
-            <a href="https://github.com/joao-mororo" target="_blank">
-              <BsGithub /> joao-mororo
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/joaovitormororo/"
-              target="_blank"
-            >
-              <BsLinkedin /> joaovitormororo
-            </a>
-          </li>
-          <li>
-            <a onClick={() => copyDiscord()} style={{ cursor: "pointer" }}>
-              <BsDiscord /> sleepingbtw
-            </a>
-          </li>
-        </ul>
+        <a href="https://github.com/joao-mororo" target="_blank">
+          <BsGithub />
+        </a>
+        <a href="https://www.linkedin.com/in/joaovitormororo/" target="_blank">
+          <BsLinkedin />
+        </a>
+        <a onClick={() => copyDiscord()} style={{ cursor: "pointer" }}>
+          <BsDiscord />
+        </a>
       </div>
-      <div className={styles.wrapper}>footer</div>
     </footer>
   );
 };

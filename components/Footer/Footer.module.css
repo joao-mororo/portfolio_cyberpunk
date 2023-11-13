@@ -6,17 +6,17 @@
 }
 
 .wrapper {
-    width: 33.333%;
+    width: 50%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
-.socials_list {
-    list-style-type: none;
+.wrapper a {
+    font-size: 1.5rem;
 }
 
-.socials_list li {
-    margin: .5rem 0;
+.wrapper a:hover {
+    opacity: .5;
 }

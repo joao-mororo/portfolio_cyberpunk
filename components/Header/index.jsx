@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -8,10 +9,8 @@ const Header = () => {
         <h1 style={{ color: "var(--color-primary)" }}>João Mororó</h1>
       </div>
       <div className={styles.nav}>
-        <a href="#home">Home</a>
-        <a href="#about">Sobre mim</a>
-        <a href="#project">Projetos</a>
-        <a href="#contact">Contato</a>
+        <Link href={"/"}>Home</Link>
+        <Link href={"/github"}>Github</Link>
       </div>
     </div>
   );
