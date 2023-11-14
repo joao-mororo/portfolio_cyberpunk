@@ -41,7 +41,7 @@ const BlinkingText = ({
       });
 
       setBlinkingText(newText);
-    }, 500); // intervalo de 500ms, você pode ajustar conforme necessário
+    }, 1000); // intervalo de 500ms, você pode ajustar conforme necessário
 
     return () => clearInterval(intervalId);
   }, [text]);

@@ -2,10 +2,10 @@
   --color-primary: #defe47;
   --color-secondary: #d1f7ff;
   --color-background: #01012b;
-  --color-background-seconday: #005678;
   --color-text: #05d9e8;
   /* --color-accent: #ff2a6d; */
   --color-accent: #ff0000;
+  --color-accent-transparent: #ff000020;
 }
 
 * {

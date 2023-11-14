@@ -16,7 +16,9 @@ const Footer = () => {
   return (
     <footer className={styles.main}>
       <div className={styles.wrapper}>
-        powered by<h1>João Mororó</h1>all rights reserved
+        &copy; {new Date().getFullYear()}
+        <h1>João Mororó</h1>
+        all rights reserved
       </div>
       <div className={styles.wrapper}>
         <a href="https://github.com/joao-mororo" target="_blank">

@@ -1,0 +1,36 @@
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.input_container {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+}
+
+.input_container:nth-child(1),
+.input_container:nth-child(2) {
+    width: 50%;
+}
+
+.input_container:nth-child(3) {
+    width: 100%;
+}
+
+.main input,
+.main textarea {
+    padding: 1rem;
+    font-size: 1.1rem;
+    outline: none;
+    background-color: var(--color-accent-transparent);
+    border: solid 1px var(--color-accent);
+    caret-color: var(--color-primary);
+    color: var(--color-text);
+    font-family: var(--font-share-tech-mono);
+}
+
+.btn_submit {
+    margin: .5rem;
+}

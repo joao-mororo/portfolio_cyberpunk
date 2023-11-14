@@ -1,9 +1,9 @@
 import ProjectCard from '@/components/ProjectCard'
-import Image from 'next/image'
+import BlinkingText from '@/components/BlinkingText';
+import Form from '@/components/Form';
 import { FaFileDownload } from 'react-icons/fa'
 import { BiLinkExternal } from "react-icons/bi";
 import styles from './page.module.css'
-import BlinkingText from '@/components/BlinkingText';
 
 export default async function Home() {
   const projects = await fetch('https://api.github.com/users/joao-mororo/repos').then((data) => data.json())
@@ -24,12 +24,15 @@ export default async function Home() {
 
       <section className={styles.about}>
         <div className={styles.about_wrapper}>
-          <img src="/images/guerreiro-cyberpunk.jpg" style={{ width: '60%' }} />
+          <img src="/images/guerreiro-cyberpunk.jpg" />
         </div>
         <div className={styles.about_wrapper}>
           <h1>Sobre mim</h1>
+          <BlinkingText>• 私について •</BlinkingText>
+          <br />
           <p>Sou um Desenvolvedor Web altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas.</p>
           <p>Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em me desenvolver cada vez mais, aprendendo novas tecnologias e melhorando minhas habilidades.</p>
+          <br />
           <button className='button'>Baixar CV <FaFileDownload /></button>
         </div>
       </section>
@@ -58,7 +61,7 @@ export default async function Home() {
           </details>
           <details open>
             <summary>AEG Media | Desde 2023</summary>
-            <p>Como Desenvolvedor Web, responsável pela criação de Landing Pages e site para as empresas associadas à AEG Media.  </p>
+            <p>Como Desenvolvedor Web, responsável pela criação de landing pages e siste para as empresas associadas à AEG Media.  </p>
           </details>
         </div>
       </section>
@@ -70,6 +73,12 @@ export default async function Home() {
             <div key={project.id} style={{ width: '33.333%', padding: '.5rem' }}><ProjectCard data={project} /></div>
           ))}
         </div>
+      </section>
+
+      <section className={styles.contact}>
+        <h1>Entre em contato</h1>
+        <BlinkingText>• 私に連絡して •</BlinkingText>
+        <Form />
       </section>
     </main>
   )
