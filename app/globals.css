@@ -1,11 +1,11 @@
 :root {
   --color-primary: #defe47;
   --color-secondary: #d1f7ff;
-  --color-background: #01012b;
+  /* --color-background: #01012b; */
+  --color-background: #021114;
   --color-text: #05d9e8;
-  /* --color-accent: #ff2a6d; */
   --color-accent: #ff0000;
-  --color-accent-transparent: #ff000020;
+  --color-accent-transparent: #ff000010;
 }
 
 * {
@@ -15,9 +15,7 @@
 }
 
 body {
-  background: linear-gradient(300deg, #01012b, rgb(9, 9, 72), #01012b);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
+  background-color: var(--color-background);
 
   color: var(--color-text);
   font-family: var(--font-electrolize);
@@ -57,18 +55,4 @@ a:hover,
 
 h1 {
   color: var(--color-primary);
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
 }

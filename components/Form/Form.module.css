@@ -24,10 +24,13 @@
     padding: 1rem;
     font-size: 1.1rem;
     outline: none;
-    background-color: var(--color-accent-transparent);
-    border: solid 1px var(--color-accent);
+    /* background-color: var(--color-accent-transparent); */
+    /* border: solid 1px var(--color-accent); */
+    background-color: #000;
+    border: none;
     caret-color: var(--color-primary);
-    color: var(--color-text);
+    /* color: var(--color-text); */
+    color: var(--color-accent);
     font-family: var(--font-share-tech-mono);
 }
 
