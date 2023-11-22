@@ -5,9 +5,9 @@ import ProjectCard from "@/components/ProjectCard";
 import moment from "moment/moment";
 
 const Github = async () => {
-  const user = await fetch("https://api.github.com/users/joao-mororo").then(
-    (data) => data.json()
-  );
+  const user = await fetch("https://api.github.com/users/joao-mororo", {
+    next: { revalidate: 3600 },
+  }).then((data) => data.json());
 
   const projects = await fetch(
     "https://api.github.com/users/joao-mororo/repos"
