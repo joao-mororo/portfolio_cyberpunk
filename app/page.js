@@ -4,6 +4,7 @@ import Form from '@/components/Form';
 import { FaFileDownload } from 'react-icons/fa'
 import { BiLinkExternal } from "react-icons/bi";
 import styles from './page.module.css'
+import Typewriter from '@/components/Typewriter';
 
 export default async function Home() {
   const projects = await fetch('https://api.github.com/users/joao-mororo/repos').then((data) => data.json())
@@ -12,12 +13,11 @@ export default async function Home() {
     <main className={styles.main}>
       <section className={styles.home}>
         <div className={styles.home_wrapper}>
-          <h1>Olá, mundo!</h1>
-          <p>Meu nome é <span>João Vitor</span>, sou um <span>Desenvolvedor Web</span>, e aqui está um pouco do meu trabalho, espero que goste :)</p>
+          <h1><Typewriter>Olá, mundo!</Typewriter></h1>
+          <p><Typewriter speed={20}>Meu nome é <span>João Vitor</span>, sou um <span>Desenvolvedor Web</span>, e aqui está um pouco do meu trabalho, espero que goste :)</Typewriter></p>
           <button className='button'>Entre em contato</button>
         </div>
         <div className={styles.home_wrapper}>
-          {/* <img src="/images/Hello.webp" style={{ width: '100%' }} /> */}
           <BlinkingText className={styles.home_blinking_text}>• こんにちは •</BlinkingText>
         </div>
       </section>
@@ -27,11 +27,11 @@ export default async function Home() {
           <img src="/images/guerreiro-cyberpunk.jpg" />
         </div>
         <div className={styles.about_wrapper}>
-          <h1>Sobre mim</h1>
+          <h1><Typewriter>Sobre mim</Typewriter></h1>
           <BlinkingText>• 私について •</BlinkingText>
           <br />
-          <p>Sou um Desenvolvedor Web altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas.</p>
-          <p>Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em me desenvolver cada vez mais, aprendendo novas tecnologias e melhorando minhas habilidades.</p>
+          <p><Typewriter speed={20}>Sou um Desenvolvedor Web altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas.</Typewriter></p>
+          <p><Typewriter speed={20}>Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em me desenvolver cada vez mais, aprendendo novas tecnologias e melhorando minhas habilidades.</Typewriter></p>
           <br />
           <button className='button'>Baixar CV <FaFileDownload /></button>
         </div>
