@@ -24,9 +24,9 @@
   align-items: center;
 }
 
-.home span {
+/* .home span {
   color: var(--color-primary);
-}
+} */
 
 .home_socials {
   display: flex;

@@ -13,8 +13,8 @@ export default async function Home() {
     <main className={styles.main}>
       <section className={styles.home}>
         <div className={styles.home_wrapper}>
-          <h1><Typewriter>Olá, mundo!</Typewriter></h1>
-          <p><Typewriter speed={20}>Meu nome é <span>João Vitor</span>, sou um <span>Desenvolvedor Web</span>, e aqui está um pouco do meu trabalho, espero que goste :)</Typewriter></p>
+          <Typewriter as='h1'>Olá, mundo!</Typewriter>
+          <Typewriter>Meu nome é <span>João Vitor</span>, sou um <span>Desenvolvedor Web</span>, e aqui está um pouco do meu trabalho, espero que goste :)</Typewriter>
           <button className='button'>Entre em contato</button>
         </div>
         <div className={styles.home_wrapper}>
@@ -30,8 +30,8 @@ export default async function Home() {
           <h1><Typewriter>Sobre mim</Typewriter></h1>
           <BlinkingText>• 私について •</BlinkingText>
           <br />
-          <p><Typewriter speed={20}>Sou um Desenvolvedor Web altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas.</Typewriter></p>
-          <p><Typewriter speed={20}>Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em me desenvolver cada vez mais, aprendendo novas tecnologias e melhorando minhas habilidades.</Typewriter></p>
+          <Typewriter>Sou um Desenvolvedor Web altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas.</Typewriter>
+          <Typewriter>Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em me desenvolver cada vez mais, aprendendo novas tecnologias e melhorando minhas habilidades.</Typewriter>
           <br />
           <button className='button'>Baixar CV <FaFileDownload /></button>
         </div>
