@@ -1,21 +1,20 @@
-import connect from "@/utils/db"
 import Chat from '@/models/Chat'
-import { NextResponse } from "next/server"
+import { NextResponse } from 'next/server'
+import connect from '@/utils/db'
 
 export const GET = async () => {
     try {
         await connect()
-        // const data = await Chat.find({}).json()
-        const data = ['um', 'dois']
+        const data = await Chat.find({})
 
-        if (!data) {
-            return NextResponse({
+        if (data.length === 0) {
+            return NextResponse.json({
                 message: "Nenhum dado encontrado",
                 status: 204
             })
         }
 
-        return NextResponse({
+        return NextResponse.json({
             message: "Mensagens coletadas",
             status: 200,
             data

@@ -8,6 +8,11 @@ const Form = () => {
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
 
+  const cleatInputs = () => {
+    setName("");
+    setMessage("");
+  };
+
   const submit = async (e) => {
     e.preventDefault();
     setIsSending(true);
@@ -32,10 +37,12 @@ const Form = () => {
         }
 
         setIsSending(false);
+        cleatInputs();
       });
     } catch (error) {
       console.error(error);
       setIsSending(false);
+      cleatInputs();
     }
   };
 
