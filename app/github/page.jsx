@@ -9,9 +9,9 @@ const Github = async () => {
     next: { revalidate: 3600 },
   }).then((data) => data.json());
 
-  const projects = await fetch(
-    "https://api.github.com/users/joao-mororo/repos"
-  ).then((data) => data.json());
+  const repos = await fetch("https://api.github.com/users/joao-mororo/repos", {
+    next: { revalidate: 3600 },
+  }).then((data) => data.json());
 
   return (
     <main className={styles.main}>
@@ -48,7 +48,7 @@ const Github = async () => {
           <h1>Projetos</h1> ({user.public_repos})
         </span>
         <div className={styles.projects_grid}>
-          {projects.map((project) => (
+          {repos.map((project) => (
             <div
               key={project.id}
               style={{ width: "33.333%", padding: ".5rem" }}

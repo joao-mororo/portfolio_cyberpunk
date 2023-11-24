@@ -4,7 +4,8 @@ import Form from '@/components/Form';
 import { FaFileDownload } from 'react-icons/fa'
 import { BiLinkExternal } from "react-icons/bi";
 import styles from './page.module.css'
-import Typewriter from '@/components/Typewriter';
+import Typewriter from '@/components/ArwesComponents/Typewriter';
+import Sequence from '@/components/ArwesComponents/Sequence';
 
 export default async function Home() {
   const projects = await fetch('https://api.github.com/users/joao-mororo/repos').then((data) => data.json())
@@ -30,8 +31,10 @@ export default async function Home() {
           <h1><Typewriter>Sobre mim</Typewriter></h1>
           <BlinkingText>• 私について •</BlinkingText>
           <br />
-          <Typewriter>Sou um Desenvolvedor Web altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas.</Typewriter>
-          <Typewriter>Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em me desenvolver cada vez mais, aprendendo novas tecnologias e melhorando minhas habilidades.</Typewriter>
+          <Sequence>
+            <Typewriter>Sou um Desenvolvedor Web altamente qualificado e experiente em projetos de desenvolvimento de sites. Tenho um interesse particular em sites responsivos e na criação de experiências de usuário intuitivas e dinâmicas.</Typewriter>
+            <Typewriter>Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em me desenvolver cada vez mais, aprendendo novas tecnologias e melhorando minhas habilidades.</Typewriter>
+          </Sequence>
           <br />
           <button className='button'>Baixar CV <FaFileDownload /></button>
         </div>
