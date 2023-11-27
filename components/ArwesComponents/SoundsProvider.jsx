@@ -1,37 +1,49 @@
 "use client";
 
-import { BleepsProvider } from "@arwes/react";
-import React from "react";
+import { usePathname } from "next/navigation";
+import React, { useEffect } from "react";
 
-const bleepsSettings = {
-  // Shared global audio settings.
-  master: {
-    volume: 0.9,
-  },
-  bleeps: {
-    // A transition bleep sound to play when the user enters the app.
-    intro: {
-      sources: [
-        {
-          src: "https://arwes.dev/assets/sounds/intro.mp3",
-          type: "audio/mpeg",
-        },
-      ],
-    },
-    // An interactive bleep sound to play when user clicks.
-    click: {
-      sources: [
-        {
-          src: "https://arwes.dev/assets/sounds/click.mp3",
-          type: "audio/mpeg",
-        },
-      ],
-    },
-  },
-};
+const SoundsProvider = () => {
+  const pathname = usePathname();
 
-const SoundsProvider = ({ children }) => {
-  return <BleepsProvider {...bleepsSettings}>{children}</BleepsProvider>;
+  // add sound-click to all buttons and links
+  useEffect(() => {
+    const click = document.getElementById("sound-click");
+    const buttons = document.querySelectorAll("button");
+    const links = document.querySelectorAll("a");
+    const summaries = document.querySelectorAll("summary");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", () => {
+        click.play();
+      });
+    }
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", () => {
+        click.play();
+      });
+    }
+    for (var i = 0; i < summaries.length; i++) {
+      summaries[i].addEventListener("click", () => {
+        click.play();
+      });
+    }
+  }, [pathname]);
+
+  // add sound-intro on load page (not working)
+  useEffect(() => {
+    const intro = document.getElementById("sound-intro");
+    intro.play();
+    // document.getElementsByTagName("body")[0].addEventListener("load", () => {
+    //   intro.play();
+    // });
+  }, []);
+
+  return (
+    <>
+      <audio id="sound-intro" src="/sounds/intro.mp3"></audio>
+      <audio id="sound-click" src="/sounds/click.mp3"></audio>
+    </>
+  );
 };
 
 export default SoundsProvider;

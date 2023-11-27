@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./Form.module.css";
+import Button from "../Button";
 
 const Form = () => {
   const [name, setName] = useState();
@@ -50,9 +51,7 @@ const Form = () => {
           required
         ></textarea>
       </div>
-      <button className={`button ${styles.btn_submit}`} type="submit">
-        Enviar
-      </button>
+      <Button type={"submit"}>Enviar</Button>
     </form>
   );
 };

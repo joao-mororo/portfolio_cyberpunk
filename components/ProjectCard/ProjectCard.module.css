@@ -1,6 +1,6 @@
 .main {
-    border: solid 1px var(--color-accent);
-    background-color: var(--color-accent-transparent);
+    /* border: solid 1px var(--color-accent); */
+    /* background-color: var(--color-accent-transparent); */
     padding: .5rem;
     display: flex;
     flex-direction: column;

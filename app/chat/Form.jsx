@@ -1,12 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
+import Button from "@/components/Button";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import { TOASTFY_CONFIG } from "@/data/contants";
 import styles from "./Chat.module.css";
 
 const Form = () => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
+  const router = useRouter();
 
   const cleatInputs = () => {
     setName("");
@@ -31,9 +36,10 @@ const Form = () => {
 
         // trocar os alerts por toasts
         if (result.status === 201) {
-          alert(result.message);
+          toast.success(result.message, TOASTFY_CONFIG);
+          router.refresh();
         } else {
-          alert(result.message);
+          toast.error(result.message, TOASTFY_CONFIG);
         }
 
         setIsSending(false);
@@ -64,16 +70,15 @@ const Form = () => {
           name="message"
           id="message"
           cols="30"
-          rows="10"
+          rows="5"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
         ></textarea>
       </div>
-
-      <button type="submit" className="button" disabled={isSending}>
+      <Button type="submit" disabled={isSending}>
         {isSending ? "Enviando..." : "Enviar"}
-      </button>
+      </Button>
     </form>
   );
 };

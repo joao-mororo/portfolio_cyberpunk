@@ -1,14 +1,10 @@
 import React from "react";
-import styles from "./Button.module.css";
+import styles from "./Box.module.css";
 
-const Button = ({ children, type, onClick, disabled }) => {
+const Box = ({ children, className, as = "div", open }) => {
+  const As = as;
   return (
-    <button
-      className={styles.button}
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-    >
+    <As className={`${styles.main} ${className}`} open={open}>
       <span
         className={`${styles.decorator} ${styles.top} ${styles.left}`}
       ></span>
@@ -21,9 +17,9 @@ const Button = ({ children, type, onClick, disabled }) => {
       <span
         className={`${styles.decorator} ${styles.bottom} ${styles.right}`}
       ></span>
-      <span>{children}</span>
-    </button>
+      {children}
+    </As>
   );
 };
 
-export default Button;
+export default Box;

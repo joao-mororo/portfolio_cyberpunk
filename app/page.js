@@ -3,9 +3,11 @@ import BlinkingText from '@/components/BlinkingText';
 import Form from '@/components/Form';
 import { FaFileDownload } from 'react-icons/fa'
 import { BiLinkExternal } from "react-icons/bi";
-import styles from './page.module.css'
 import Typewriter from '@/components/ArwesComponents/Typewriter';
 import Sequence from '@/components/ArwesComponents/Sequence';
+import Button from '@/components/Button';
+import Box from '@/components/Box';
+import styles from './page.module.css'
 
 export default async function Home() {
   const projects = await fetch('https://api.github.com/users/joao-mororo/repos').then((data) => data.json())
@@ -16,7 +18,7 @@ export default async function Home() {
         <div className={styles.home_wrapper}>
           <Typewriter as='h1'>Olá, mundo!</Typewriter>
           <Typewriter>Meu nome é <span>João Vitor</span>, sou um <span>Desenvolvedor Web</span>, e aqui está um pouco do meu trabalho, espero que goste :)</Typewriter>
-          <button className='button'>Entre em contato</button>
+          <Button>Entre em contato</Button>
         </div>
         <div className={styles.home_wrapper}>
           <BlinkingText className={styles.home_blinking_text}>• こんにちは •</BlinkingText>
@@ -28,7 +30,7 @@ export default async function Home() {
           <img src="/images/guerreiro-cyberpunk.jpg" />
         </div>
         <div className={styles.about_wrapper}>
-          <h1><Typewriter>Sobre mim</Typewriter></h1>
+          <Typewriter as='h1'>Sobre mim</Typewriter>
           <BlinkingText>• 私について •</BlinkingText>
           <br />
           <Sequence>
@@ -36,45 +38,45 @@ export default async function Home() {
             <Typewriter>Pessoa bem organizada, solucionadora de problemas e com atenção aos detalhes. Sempre focado em me desenvolver cada vez mais, aprendendo novas tecnologias e melhorando minhas habilidades.</Typewriter>
           </Sequence>
           <br />
-          <button className='button'>Baixar CV <FaFileDownload /></button>
+          <Button>Baixar CV <FaFileDownload /></Button>
         </div>
       </section>
 
       <section className={styles.experience}>
         <div>
           <h1>Formação acadêmica</h1>
-          <details>
+          <Box as='details'>
             <summary>Técnico em Desenvolvimento de Sistemas | 2018 - 2020</summary>
             <p>Curso técnico realizado na ETE Edson Mororó Moura de Belo Jardim, em paralelo ao ensino médio.</p>
-          </details>
-          <details>
+          </Box>
+          <Box as='details'>
             <summary>Superior em Análise e Desenvolvimento de Sistemas | 2021 - 2022</summary>
             <p>Curso superior em Análise e Desenvolvimento de Sistemas realizado na Faculdade Pitágoras de Belo Jardim, Brasil.</p>
-          </details>
-          <details>
+          </Box>
+          <Box as='details'>
             <summary>Curso Web Moderno | 2021 - 2022</summary>
             <p>Curso online de Web Moderno com JavaScript realizado na Udemy.</p>
-          </details>
+          </Box>
         </div>
         <div>
           <h1>Experiência profissional</h1>
-          <details>
+          <Box as='details'>
             <summary>Baterias Moura | 2021 - 2022</summary>
             <p>Responsável pelo desenvolvimento de projetos de automação, com foco no desenvolvimento de softwares, além de auxiliar a equipe no desenvolvimento de hardwares.</p>
-          </details>
-          <details open>
+          </Box>
+          <Box as='details' open>
             <summary>AEG Media | Desde 2023</summary>
             <p>Como Desenvolvedor Web, responsável pela criação de landing pages e siste para as empresas associadas à AEG Media.  </p>
-          </details>
+          </Box>
         </div>
       </section>
 
       <section className={styles.projects}>
         <h1>Esses são meus projetos no <a href='https://github.com/joao-mororo' target='_blank'>Github <BiLinkExternal /></a></h1>
         <div className={styles.projects_grid}>
-          {projects.map((project) => (
+          {projects ? projects.map((project) => (
             <div key={project.id} style={{ width: '33.333%', padding: '.5rem' }}><ProjectCard data={project} /></div>
-          ))}
+          )) : 'Projetos não encontrados'}
         </div>
       </section>
 

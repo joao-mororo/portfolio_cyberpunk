@@ -1,5 +1,6 @@
 import React from "react";
 import { BiLinkExternal } from "react-icons/bi";
+import Box from "../Box";
 import styles from "./ProjectCard.module.css";
 
 const ProjectCard = async ({ data }) => {
@@ -8,7 +9,7 @@ const ProjectCard = async ({ data }) => {
   ).then((res) => res.json());
 
   return (
-    <div className={styles.main}>
+    <Box className={styles.main}>
       <h1>{data.name}</h1>
       <p>
         •{" "}
@@ -27,7 +28,7 @@ const ProjectCard = async ({ data }) => {
           </a>
         )}
       </div>
-    </div>
+    </Box>
   );
 };
 

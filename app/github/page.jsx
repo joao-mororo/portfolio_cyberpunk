@@ -3,6 +3,8 @@ import styles from "./GitHub.module.css";
 import { BiLinkExternal } from "react-icons/bi";
 import ProjectCard from "@/components/ProjectCard";
 import moment from "moment/moment";
+import Sequence from "@/components/ArwesComponents/Sequence";
+import Typewriter from "@/components/ArwesComponents/Typewriter";
 
 const Github = async () => {
   const user = await fetch("https://api.github.com/users/joao-mororo", {
@@ -20,26 +22,49 @@ const Github = async () => {
           <img src={user.avatar_url} alt="avatar" />
         </div>
         <div className={styles.wrapper}>
-          <h1>{user.name}</h1>
-          <a href="https://github.com/joao-mororo" target="_blank">
+          <Typewriter as="h1" manager="decipher">
+            {user.name}
+          </Typewriter>
+          <Typewriter
+            as="a"
+            href="https://github.com/joao-mororo"
+            target="_blank"
+            manager="decipher"
+          >
             {user.login} <BiLinkExternal />
-          </a>
+          </Typewriter>
           <br />
-          <p>{user.bio}</p>
+          <Typewriter as="p" manager="decipher">
+            {user.bio}
+          </Typewriter>
           <br />
           <ul>
-            <li>
+            <Typewriter as="li" manager="decipher">
               {user.followers} followers | {user.following} following
-            </li>
-            {user.location && <li>{user.location}</li>}
-            {user.email && <li>{user.email}</li>}
-            {user.twitter_username && <li>{user.twitter_username}</li>}
-            {user.blog && (
-              <li>
-                <a href={user.blog}>{user.blog}</a>
-              </li>
+            </Typewriter>
+            {user.location && (
+              <Typewriter as="li" manager="decipher">
+                {user.location}
+              </Typewriter>
             )}
-            <li>Desde {moment(user.created_at).format("DD/MM/YYYY")}</li>
+            {user.email && (
+              <Typewriter as="li" manager="decipher">
+                {user.email}
+              </Typewriter>
+            )}
+            {user.twitter_username && (
+              <Typewriter as="li" manager="decipher">
+                {user.twitter_username}
+              </Typewriter>
+            )}
+            {user.blog && (
+              <Typewriter as="li" manager="decipher">
+                <a href={user.blog}>{user.blog}</a>
+              </Typewriter>
+            )}
+            <Typewriter as="li" manager="decipher">
+              Desde {moment(user.created_at).format("DD/MM/YYYY")}
+            </Typewriter>
           </ul>
         </div>
       </section>
@@ -48,14 +73,16 @@ const Github = async () => {
           <h1>Projetos</h1> ({user.public_repos})
         </span>
         <div className={styles.projects_grid}>
-          {repos.map((project) => (
-            <div
-              key={project.id}
-              style={{ width: "33.333%", padding: ".5rem" }}
-            >
-              <ProjectCard data={project} />
-            </div>
-          ))}
+          {repos
+            ? repos.map((project) => (
+                <div
+                  key={project.id}
+                  style={{ width: "33.333%", padding: ".5rem" }}
+                >
+                  <ProjectCard data={project} />
+                </div>
+              ))
+            : "Repositórios não encontrados"}
         </div>
       </section>
     </main>
