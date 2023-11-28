@@ -1,14 +1,17 @@
-"use client";
-
 import React from "react";
 import Form from "./Form";
 import Box from "@/components/Box";
 import Typewriter from "@/components/ArwesComponents/Typewriter";
 import BlinkingText from "@/components/BlinkingText";
+import { headers } from "next/headers";
 import styles from "./Chat.module.css";
 
 const Chat = async () => {
-  const messages = await fetch("api/chat/get", {
+  const headersList = headers();
+  const protocol = headersList.get("x-forwarded-proto") || "";
+  const domain = headersList.get("x-forwarded-host") || "";
+
+  const messages = await fetch(`${protocol}://${domain}/api/chat/get`, {
     next: { cache: "no-store" },
   })
     .then((res) => res.json())

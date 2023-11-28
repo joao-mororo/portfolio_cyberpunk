@@ -83,10 +83,10 @@
 .experience details {
   width: 100%;
   text-align: center;
-  border: solid 1px var(--color-accent);
-  background-color: var(--color-accent-transparent);
+  /* border: solid 1px var(--color-accent); */
+  /* background-color: var(--color-accent-transparent); */
   padding: .5rem;
-  margin: .5rem 0;
+  /* margin: .5rem 0; */
 }
 
 .experience summary {

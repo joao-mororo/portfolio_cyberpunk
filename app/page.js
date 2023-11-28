@@ -45,28 +45,38 @@ export default async function Home() {
       <section className={styles.experience}>
         <div>
           <h1>Formação acadêmica</h1>
-          <Box as='details'>
-            <summary>Técnico em Desenvolvimento de Sistemas | 2018 - 2020</summary>
-            <p>Curso técnico realizado na ETE Edson Mororó Moura de Belo Jardim, em paralelo ao ensino médio.</p>
+          <Box style={{ width: '100%', margin: '.5rem 0' }}>
+            <details>
+              <summary>Técnico em Desenvolvimento de Sistemas | 2018 - 2020</summary>
+              <p>Curso técnico realizado na ETE Edson Mororó Moura de Belo Jardim, em paralelo ao ensino médio.</p>
+            </details>
           </Box>
-          <Box as='details'>
-            <summary>Superior em Análise e Desenvolvimento de Sistemas | 2021 - 2022</summary>
-            <p>Curso superior em Análise e Desenvolvimento de Sistemas realizado na Faculdade Pitágoras de Belo Jardim, Brasil.</p>
+          <Box style={{ width: '100%', margin: '.5rem 0' }}>
+            <details>
+              <summary>Superior em Análise e Desenvolvimento de Sistemas | 2021 - 2022</summary>
+              <p>Curso superior em Análise e Desenvolvimento de Sistemas realizado na Faculdade Pitágoras de Belo Jardim, Brasil.</p>
+            </details>
           </Box>
-          <Box as='details'>
-            <summary>Curso Web Moderno | 2021 - 2022</summary>
-            <p>Curso online de Web Moderno com JavaScript realizado na Udemy.</p>
+          <Box style={{ width: '100%', margin: '.5rem 0' }}>
+            <details>
+              <summary>Curso Web Moderno | 2021 - 2022</summary>
+              <p>Curso online de Web Moderno com JavaScript realizado na Udemy.</p>
+            </details>
           </Box>
         </div>
         <div>
           <h1>Experiência profissional</h1>
-          <Box as='details'>
-            <summary>Baterias Moura | 2021 - 2022</summary>
-            <p>Responsável pelo desenvolvimento de projetos de automação, com foco no desenvolvimento de softwares, além de auxiliar a equipe no desenvolvimento de hardwares.</p>
+          <Box style={{ width: '100%', margin: '.5rem 0' }}>
+            <details>
+              <summary>Baterias Moura | 2021 - 2022</summary>
+              <p>Responsável pelo desenvolvimento de projetos de automação, com foco no desenvolvimento de softwares, além de auxiliar a equipe no desenvolvimento de hardwares.</p>
+            </details>
           </Box>
-          <Box as='details' open>
-            <summary>AEG Media | Desde 2023</summary>
-            <p>Como Desenvolvedor Web, responsável pela criação de landing pages e siste para as empresas associadas à AEG Media.  </p>
+          <Box style={{ width: '100%', margin: '.5rem 0' }}>
+            <details open>
+              <summary>AEG Media | Desde 2023</summary>
+              <p>Como Desenvolvedor Web, responsável pela criação de landing pages e siste para as empresas associadas à AEG Media.  </p>
+            </details>
           </Box>
         </div>
       </section>
