@@ -1,17 +1,53 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "./Form.module.css";
 import Button from "../Button";
+import emailjs from "@emailjs/browser";
+import { EMAILJS_CONFIG, TOASTFY_CONFIG } from "@/data/contants";
+import { toast } from "react-toastify";
+import styles from "./Form.module.css";
 
 const Form = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [message, setMessage] = useState();
+  const [isSending, setIsSending] = useState(false);
+
+  const clear = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
 
   const submit = (e) => {
     e.preventDefault();
-    console.log({ name, email, message });
+    setIsSending(true);
+
+    const templateParams = {
+      from_name: name,
+      email: email,
+      subject: "Nova mensagem do portfólio",
+      message: message,
+    };
+
+    emailjs
+      .send(
+        EMAILJS_CONFIG.serviceID,
+        EMAILJS_CONFIG.templateID,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      )
+      .then(
+        () => {
+          toast.success("Mensagem enviada", TOASTFY_CONFIG);
+          clear();
+        },
+        (err) => {
+          toast.error("Erro ao enviar mensagem", TOASTFY_CONFIG);
+          console.error(err);
+        }
+      )
+      .finally(() => setIsSending(false));
   };
 
   return (
@@ -51,7 +87,7 @@ const Form = () => {
           required
         ></textarea>
       </div>
-      <Button type={"submit"}>Enviar</Button>
+      <Button type={"submit"}>{isSending ? "Enviando..." : "Enviar"}</Button>
     </form>
   );
 };

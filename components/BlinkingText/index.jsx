@@ -41,10 +41,10 @@ const BlinkingText = ({
       });
 
       setBlinkingText(newText);
-    }, 1000); // intervalo de 500ms, você pode ajustar conforme necessário
+    }, 1000); // intervalo entre as piscadas, você pode ajustar conforme necessário
 
     return () => clearInterval(intervalId);
-  }, [text]);
+  });
 
   return (
     <div className={className} style={style}>

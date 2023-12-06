@@ -6,12 +6,18 @@
   --color-text: #05d9e8;
   --color-accent: #ff0000;
   --color-accent-transparent: #ff000010;
+
+  --mobile-max-width: 600px;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,16 +28,24 @@ body {
   /* font-family: var(--font-share-tech-mono); */
 }
 
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
 a,
 .a {
   color: var(--color-accent);
-  transition: .2s;
+  transition: 0.2s;
   text-decoration: none;
 }
 
 a:hover,
 .a:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 h1,
@@ -50,4 +64,14 @@ h2 {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-accent);
+}
+
+@media screen and (max-width: 600px) {
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
 }

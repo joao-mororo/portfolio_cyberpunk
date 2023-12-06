@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import styles from "./GitHub.module.css";
 import { BiLinkExternal } from "react-icons/bi";
 import ProjectCard from "@/components/ProjectCard";
@@ -19,7 +20,7 @@ const Github = async () => {
     <main className={styles.main}>
       <section className={styles.profile}>
         <div className={styles.wrapper}>
-          <img src={user.avatar_url} alt="avatar" />
+          <Image src={user.avatar_url} alt="avatar" width={300} height={300} />
         </div>
         <div className={styles.wrapper}>
           <Typewriter as="h1" manager="decipher">
@@ -40,7 +41,7 @@ const Github = async () => {
           <br />
           <ul>
             <Typewriter as="li" manager="decipher">
-              {user.followers} followers | {user.following} following
+              {user.followers} seguidores | {user.following} seguindo
             </Typewriter>
             {user.location && (
               <Typewriter as="li" manager="decipher">

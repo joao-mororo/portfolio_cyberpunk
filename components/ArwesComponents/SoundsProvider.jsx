@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 const SoundsProvider = () => {
   const pathname = usePathname();
 
-  // add sound-click to all buttons and links
+  // add sound-click to all buttons, links and sumaries
   useEffect(() => {
     const click = document.getElementById("sound-click");
     const buttons = document.querySelectorAll("button");
