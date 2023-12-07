@@ -36,6 +36,7 @@ export default function RootLayout({ children }) {
           closeOnClick
           rtl={false}
           pauseOnFocusLoss
+          
           draggable
           pauseOnHover
           theme="colored"

@@ -97,6 +97,19 @@
   flex-wrap: wrap;
 }
 
+.project_card {
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.projects img {
+  width: 100%;
+  height: 50%;
+}
+
 .contact {
   display: flex;
   flex-direction: column;

@@ -9,7 +9,6 @@ import styles from "./Footer.module.css";
 const Footer = () => {
   const copyDiscord = () => {
     navigator.clipboard.writeText("sleepingbtw");
-    console.log("Usuário copiado");
     toast.info("Usuário copiado", TOASTFY_CONFIG);
   };
 

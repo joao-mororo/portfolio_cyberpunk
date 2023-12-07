@@ -8,13 +8,10 @@ import Typewriter from "@/components/ArwesComponents/Typewriter";
 import Sequence from "@/components/ArwesComponents/Sequence";
 import Button from "@/components/Button";
 import Box from "@/components/Box";
+import projects from "@/data/projects";
 import styles from "./page.module.css";
 
-export default async function Home() {
-  const projects = await fetch(
-    "https://api.github.com/users/joao-mororo/repos"
-  ).then((data) => data.json());
-
+export default function Home() {
   return (
     <main className={styles.main}>
       <section className={styles.home}>
@@ -131,23 +128,28 @@ export default async function Home() {
       </section>
 
       <section className={styles.projects}>
-        <h1>
-          Esses são meus projetos no{" "}
-          <a href="https://github.com/joao-mororo" target="_blank">
-            Github <BiLinkExternal />
-          </a>
-        </h1>
+        <h1>Estes são alguns dos meus projetos</h1>
+        <BlinkingText>• プロジェクト •</BlinkingText>
         <div className={styles.projects_grid}>
-          {projects
-            ? projects.map((project) => (
-                <div
-                  key={project.id}
-                  style={{ width: "33.333%", padding: ".5rem" }}
-                >
-                  <ProjectCard data={project} />
-                </div>
-              ))
-            : "Projetos não encontrados"}
+          {projects.map((project) => (
+            <div
+              key={project.name}
+              style={{ width: "33.333%", padding: ".5rem" }}
+            >
+              <Box className={styles.project_card}>
+                <Image
+                  alt="project-image"
+                  src={project.image}
+                  width={300}
+                  height={150}
+                />
+                <h3>{project.name}</h3>
+                <a href={project.link} target="_blank">
+                  Ver mais <BiLinkExternal />
+                </a>
+              </Box>
+            </div>
+          ))}
         </div>
       </section>
 
