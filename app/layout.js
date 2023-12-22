@@ -2,6 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import LocalFont from 'next/font/local'
 import SoundsProvider from '@/components/ArwesComponents/SoundsProvider'
+import MobileMenu from '@/components/MobileMenu'
 import ScrollToTop from '@/components/ScrollToTop'
 import { VT323, Electrolize, Share_Tech_Mono } from 'next/font/google'
 import { ToastContainer } from 'react-toastify'
@@ -15,16 +16,17 @@ const share_tech_mono = Share_Tech_Mono({ subsets: ['latin'], variable: '--font-
 const cyberpunk = LocalFont({ src: '../fonts/Cyberpunk-Regular.ttf', variable: '--font-cyberpunk', display: 'swap' })
 
 export const metadata = {
-  title: 'João Mororó - Full Stack Developer',
+  title: 'João Mororó - FullStack Developer',
   description: 'Meu portfólio pessoal',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${vt323.variable} ${electrolize.variable} ${share_tech_mono.variable} ${cyberpunk.variable}`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${vt323.variable} ${electrolize.className} ${share_tech_mono.variable} ${cyberpunk.variable} text-text_color bg-background`}>
         <SoundsProvider />
         <ScrollToTop />
+        <MobileMenu />
         <Header />
         {children}
         <Footer />

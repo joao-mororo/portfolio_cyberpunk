@@ -10,6 +10,7 @@ const Typewriter = ({
   manager = "sequence",
   href,
   target,
+  className,
 }) => {
   useEffect(() => {
     const audio = document.getElementById("audio-type");
@@ -26,6 +27,7 @@ const Typewriter = ({
         fixed
         href={href}
         target={target}
+        className={className}
       >
         {children}
       </Text>

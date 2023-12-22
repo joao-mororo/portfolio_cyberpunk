@@ -1,7 +1,6 @@
-import React from "react";
-import { BiLinkExternal } from "react-icons/bi";
-import Box from "../Box";
-import styles from "./ProjectCard.module.css";
+import Box from "@/components/Box";
+import { BsGithub } from "react-icons/bs";
+import { TbWorld } from "react-icons/tb";
 
 const ProjectCard = async ({ data }) => {
   const languages = await fetch(
@@ -9,7 +8,7 @@ const ProjectCard = async ({ data }) => {
   ).then((res) => res.json());
 
   return (
-    <Box className={styles.main}>
+    <Box className="p-2 flex flex-col justify-between items-center min-h-[10rem] gap-2">
       <h1>{data.name}</h1>
       <p>
         •{" "}
@@ -17,14 +16,14 @@ const ProjectCard = async ({ data }) => {
           <span key={lan}>{lan} • </span>
         ))}
       </p>
-      <p className={styles.description}>{data.description}</p>
-      <div className={styles.links}>
+      <p className="text-center">{data.description}</p>
+      <div className="flex gap-2">
         <a href={data.html_url} target="_blank">
-          Repositório <BiLinkExternal />
+          <BsGithub /> Repositório
         </a>
         {data.homepage && (
           <a href={data.homepage} target="_blank">
-            Site <BiLinkExternal />
+            <TbWorld /> Site
           </a>
         )}
       </div>

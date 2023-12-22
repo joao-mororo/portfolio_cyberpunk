@@ -1,8 +1,8 @@
 const projects = [
   {
-    name: "AEG Media - Assessoria de Marketing",
-    image: "/images/projects/project-aegassessoria.png",
-    link: "https://aegmediamkt.com/assessoria/",
+    name: "MOB - Proteção Veicular",
+    image: "/images/projects/project-mob.png",
+    link: "https://mob.aegmedia.com.br/",
   },
   {
     name: "AEG Media - Proteção Veicular",
@@ -20,14 +20,14 @@ const projects = [
     link: "https://vipnordeste.aegmedia.com.br/",
   },
   {
-    name: "Costa & Marinho - Advogados Associados",
-    image: "/images/projects/project-costaemarinho.png",
-    link: "https://costaemarinho.aegmedia.com.br/",
+    name: "AEG Media - Assessoria",
+    image: "/images/projects/project-aegmediav2.png",
+    link: "https://aegmediamkt.com/v2",
   },
   {
-    name: "Meu Time",
-    image: "/images/projects/project-meutime.png",
-    link: "https://joaomororo-meutime.netlify.app/",
+    name: "ProDrive - Proteção Veicular",
+    image: "/images/projects/project-prodrive.png",
+    link: "https://prodrive.aegmedia.com.br/",
   },
 ];
 

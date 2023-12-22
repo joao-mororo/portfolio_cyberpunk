@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import Button from "../Button";
+import Input from "./Input";
 import emailjs from "@emailjs/browser";
 import { EMAILJS_CONFIG, TOASTFY_CONFIG } from "@/data/contants";
 import { toast } from "react-toastify";
-import styles from "./Form.module.css";
+import { SiSpinrilla } from "react-icons/si";
 
 const Form = () => {
   const [name, setName] = useState();
@@ -51,10 +52,10 @@ const Form = () => {
   };
 
   return (
-    <form className={styles.main} onSubmit={submit}>
-      <div className={styles.input_container}>
+    <form className="flex flex-wrap justify-end" onSubmit={submit}>
+      <div className="flex flex-col p-2 w-full sm:w-1/2">
         <label htmlFor="name">Nome</label>
-        <input
+        <Input
           type="text"
           id="name"
           placeholder="Nome"
@@ -63,9 +64,9 @@ const Form = () => {
           required
         />
       </div>
-      <div className={styles.input_container}>
+      <div className="flex flex-col p-2 w-full sm:w-1/2">
         <label htmlFor="email">Email</label>
-        <input
+        <Input
           type="email"
           id="email"
           placeholder="Email"
@@ -74,9 +75,10 @@ const Form = () => {
           required
         />
       </div>
-      <div className={styles.input_container}>
+      <div className="flex flex-col p-2 w-full">
         <label htmlFor="message">Mensagem</label>
-        <textarea
+        <Input
+          isTextarea
           name="message"
           id="message"
           cols="30"
@@ -85,9 +87,17 @@ const Form = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
-        ></textarea>
+        ></Input>
       </div>
-      <Button type={"submit"}>{isSending ? "Enviando..." : "Enviar"}</Button>
+      <Button type={"submit"}>
+        {isSending ? (
+          <span>
+            <SiSpinrilla className="animate-spin" /> Enviando...
+          </span>
+        ) : (
+          <span>Enviar</span>
+        )}
+      </Button>
     </form>
   );
 };

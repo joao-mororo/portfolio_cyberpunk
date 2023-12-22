@@ -1,11 +1,10 @@
-import React from "react";
 import Image from "next/image";
-import styles from "./GitHub.module.css";
-import { BiLinkExternal } from "react-icons/bi";
-import ProjectCard from "@/components/ProjectCard";
-import moment from "moment/moment";
-import Sequence from "@/components/ArwesComponents/Sequence";
+import ProjectCard from "./ProjectCard";
 import Typewriter from "@/components/ArwesComponents/Typewriter";
+import BlinkingText from "@/components/BlinkingText";
+import moment from "moment/moment";
+import { BiLinkExternal } from "react-icons/bi";
+import { BsGithub } from "react-icons/bs";
 
 const Github = async () => {
   const user = await fetch("https://api.github.com/users/joao-mororo", {
@@ -17,13 +16,19 @@ const Github = async () => {
   }).then((data) => data.json());
 
   return (
-    <main className={styles.main}>
-      <section className={styles.profile}>
-        <div className={styles.wrapper}>
-          <Image src={user.avatar_url} alt="avatar" width={300} height={300} />
+    <main className="container">
+      <section className="grid grid-cols-1 sm:grid-cols-2 py-16">
+        <div className="flex justify-center items-center">
+          <Image
+            src={user.avatar_url}
+            alt="avatar"
+            width={300}
+            height={300}
+            className="w-2/3 sm:w-1/2 rounded-full"
+          />
         </div>
-        <div className={styles.wrapper}>
-          <Typewriter as="h1" manager="decipher">
+        <div className="flex justify-center flex-col mt-4">
+          <Typewriter as="h1" manager="decipher" className="text-2xl font-bold">
             {user.name}
           </Typewriter>
           <Typewriter
@@ -32,7 +37,7 @@ const Github = async () => {
             target="_blank"
             manager="decipher"
           >
-            {user.login} <BiLinkExternal />
+            <BsGithub /> {user.login}
           </Typewriter>
           <br />
           <Typewriter as="p" manager="decipher">
@@ -60,7 +65,9 @@ const Github = async () => {
             )}
             {user.blog && (
               <Typewriter as="li" manager="decipher">
-                <a href={user.blog}>{user.blog}</a>
+                <a href={user.blog}>
+                  {user.blog} <BiLinkExternal />
+                </a>
               </Typewriter>
             )}
             <Typewriter as="li" manager="decipher">
@@ -69,19 +76,18 @@ const Github = async () => {
           </ul>
         </div>
       </section>
-      <section className={styles.projects}>
-        <span style={{ display: "flex", gap: ".5rem" }}>
-          <h1>Projetos</h1> ({user.public_repos})
+
+      {/* Projects */}
+      <section className="flex flex-col items-center pb-16">
+        <span className="flex">
+          <h1 className="text-3xl font-bold">Projetos</h1>
+          {user.public_repos}
         </span>
-        <div className={styles.projects_grid}>
+        <BlinkingText>• プロジェクト •</BlinkingText>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
           {repos
             ? repos.map((project) => (
-                <div
-                  key={project.id}
-                  style={{ width: "33.333%", padding: ".5rem" }}
-                >
-                  <ProjectCard data={project} />
-                </div>
+                <ProjectCard key={project.id} data={project} />
               ))
             : "Repositórios não encontrados"}
         </div>

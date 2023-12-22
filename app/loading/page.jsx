@@ -1,8 +1,8 @@
 import LoadingPage from "@/components/LoadingPage";
 import React from "react";
 
-const loading = () => {
+const Loading = () => {
   return <LoadingPage />;
 };
 
-export default loading;
+export default Loading;

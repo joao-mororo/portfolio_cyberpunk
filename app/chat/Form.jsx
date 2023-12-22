@@ -5,7 +5,7 @@ import Button from "@/components/Button";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { TOASTFY_CONFIG } from "@/data/contants";
-import styles from "./Chat.module.css";
+import { SiSpinrilla } from "react-icons/si";
 
 const Form = () => {
   const [name, setName] = useState("");
@@ -53,10 +53,14 @@ const Form = () => {
   };
 
   return (
-    <form className={styles.form} onSubmit={(e) => submit(e)}>
-      <div className={styles.input_container}>
+    <form
+      className="flex flex-col gap-4 w-full sm:w-2/3"
+      onSubmit={(e) => submit(e)}
+    >
+      <div className="flex flex-col">
         <label htmlFor="name">Nome</label>
         <input
+          className="bg-black text-accent border-none outline-none p-4 resize-none"
           type="text"
           id="name"
           value={name}
@@ -64,9 +68,10 @@ const Form = () => {
           required
         />
       </div>
-      <div className={styles.input_container}>
+      <div className="flex flex-col">
         <label htmlFor="message">Mensagem</label>
         <textarea
+          className="bg-black text-accent border-none outline-none p-4 resize-none"
           name="message"
           id="message"
           cols="30"
@@ -77,7 +82,13 @@ const Form = () => {
         ></textarea>
       </div>
       <Button type="submit" disabled={isSending}>
-        {isSending ? "Enviando..." : "Enviar"}
+        {isSending ? (
+          <span>
+            <SiSpinrilla className="animate-spin" /> Enviando...
+          </span>
+        ) : (
+          <span>Enviar</span>
+        )}
       </Button>
     </form>
   );
