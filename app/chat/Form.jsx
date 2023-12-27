@@ -54,13 +54,13 @@ const Form = () => {
 
   return (
     <form
-      className="flex flex-col gap-4 w-full sm:w-2/3"
+      className="flex w-full flex-col gap-4 sm:w-2/3"
       onSubmit={(e) => submit(e)}
     >
       <div className="flex flex-col">
         <label htmlFor="name">Nome</label>
         <input
-          className="bg-black text-accent border-none outline-none p-4 resize-none"
+          className="resize-none border-none bg-black p-4 text-accent outline-none"
           type="text"
           id="name"
           value={name}
@@ -71,7 +71,7 @@ const Form = () => {
       <div className="flex flex-col">
         <label htmlFor="message">Mensagem</label>
         <textarea
-          className="bg-black text-accent border-none outline-none p-4 resize-none"
+          className="resize-none border-none bg-black p-4 text-accent outline-none"
           name="message"
           id="message"
           cols="30"

@@ -11,9 +11,9 @@ const share_tech_mono = Share_Tech_Mono({
 const LoadingPage = () => {
   return (
     <section
-      className={`w-full h-[90vh] flex justify-center items-center ${share_tech_mono.className}`}
+      className={`flex h-[90vh] w-full items-center justify-center ${share_tech_mono.className}`}
     >
-      <h1 className="text-4xl font-bold flex gap-4">
+      <h1 className="flex gap-4 text-4xl font-bold">
         <SiSpinrilla className="animate-spin" />
         loading...
       </h1>

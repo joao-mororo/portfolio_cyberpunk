@@ -24,7 +24,7 @@ const Input = ({
 
   return (
     <As
-      className={`p-4 text-lg outline-none bg-black border-none caret-primary text-accent ${share_tech_mono.className}`}
+      className={`border-none bg-black p-4 text-lg text-accent caret-primary outline-none ${share_tech_mono.className}`}
       type={type}
       id={id}
       value={value}

@@ -18,18 +18,18 @@ const MobileMenu = () => {
   return (
     <>
       {menuIsOpen ? (
-        <div className="fixed bg-background h-screen w-screen z-20">
+        <div className="fixed z-20 h-screen w-screen bg-background">
           <button
             className="absolute right-8 top-8 text-4xl"
             onClick={() => setMenuIsOpen(false)}
           >
             <BiX />
           </button>
-          <div className="bg-black h-1/4 flex justify-center items-center flex-col">
+          <div className="flex h-1/4 flex-col items-center justify-center bg-black">
             <CyberpunkFont className="text-4xl">Joao Mororo</CyberpunkFont>
             <BlinkingText>• メニュー •</BlinkingText>
           </div>
-          <nav className="h-2/4 text-2xl flex justify-center items-center flex-col gap-4">
+          <nav className="flex h-2/4 flex-col items-center justify-center gap-4 text-2xl">
             <Link href={"/"} onClick={() => setMenuIsOpen(false)}>
               Home
             </Link>
@@ -40,7 +40,7 @@ const MobileMenu = () => {
               Chat
             </Link>
           </nav>
-          <div className="h-1/4 flex justify-center items-center gap-4">
+          <div className="flex h-1/4 items-center justify-center gap-4">
             <a
               className="text-2xl hover:opacity-50"
               href="https://github.com/joao-mororo"
@@ -66,7 +66,7 @@ const MobileMenu = () => {
         </div>
       ) : (
         <button
-          className="block sm:hidden absolute right-8 top-8 text-4xl"
+          className="absolute right-8 top-8 block text-4xl sm:hidden"
           onClick={() => setMenuIsOpen(true)}
         >
           <BiMenuAltRight />

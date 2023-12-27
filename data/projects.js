@@ -1,13 +1,13 @@
 const projects = [
   {
+    name: "Portfolio - Versão 1",
+    image: "/images/projects/project-portfoliov1.png",
+    link: "https://joaomororo.netlify.app/",
+  },
+  {
     name: "MOB - Proteção Veicular",
     image: "/images/projects/project-mob.png",
     link: "https://mob.aegmedia.com.br/",
-  },
-  {
-    name: "AEG Media - Proteção Veicular",
-    image: "/images/projects/project-aegprotecao.png",
-    link: "https://aegmediamkt.com/protecaoveicular",
   },
   {
     name: "Hipomax - Cloro Gel",

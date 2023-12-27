@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import Button from "../Button";
 import { IoIosArrowUp } from "react-icons/io";
 import styles from "./ToTopButton.module.css";

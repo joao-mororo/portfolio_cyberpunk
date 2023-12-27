@@ -17,21 +17,21 @@ const Github = async () => {
 
   return (
     <main className="container">
-      <section className="grid grid-cols-1 sm:grid-cols-2 py-16">
-        <div className="flex justify-center items-center">
+      <section className="grid grid-cols-1 py-16 sm:grid-cols-2">
+        <div className="flex items-center justify-center">
           <Image
             src={user.avatar_url}
             alt="avatar"
             width={300}
             height={300}
-            className="w-2/3 sm:w-1/2 rounded-full"
+            className="w-2/3 rounded-full sm:w-1/2"
           />
         </div>
-        <div className="flex justify-center flex-col mt-4">
+        <div className="mt-4 flex flex-col justify-center">
           <Typewriter
             as="h1"
             manager="decipher"
-            className="text-2xl font-bold mb-1"
+            className="mb-1 text-2xl font-bold"
           >
             {user.name}
           </Typewriter>
@@ -83,7 +83,7 @@ const Github = async () => {
           {user.public_repos}
         </span>
         <BlinkingText>• プロジェクト •</BlinkingText>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {repos
             ? repos.map((project) => (
                 <ProjectCard key={project.id} data={project} />

@@ -17,22 +17,22 @@ const Chat = async () => {
     .then((res) => res.data);
 
   return (
-    <main className="container py-8 sm:py-[2%] flex flex-col justify-center items-center">
+    <main className="container flex flex-col items-center justify-center py-8 sm:py-[2%]">
       <Typewriter as="h1" className="text-3xl font-bold">
         Chat global
       </Typewriter>
       <BlinkingText>• チャット •</BlinkingText>
       <br />
       <Form />
-      <hr className="w-1/2 my-8 border-[#ccc]" />
-      <div className="flex flex-col items-center w-full sm:w-2/3 gap-4">
+      <hr className="my-8 w-1/2 border-[#ccc]" />
+      <div className="flex w-full flex-col items-center gap-4 sm:w-2/3">
         <Box className="w-full p-6">
           <Typewriter as="h2" manager="decipher" className="text-2xl font-bold">
             João Mororó
           </Typewriter>
           <Typewriter
             as="p"
-            className="border-solid border-l-4 border-l-text_color pl-4 mt-4"
+            className="mt-4 border-l-4 border-solid border-l-text_color pl-4"
           >
             Aqui você pode deixar uma messagem pública para interagir comigo e
             com todos que vierem até aqui!
@@ -50,7 +50,7 @@ const Chat = async () => {
               </Typewriter>
               <Typewriter
                 as="p"
-                className="border-solid border-4 border-l-text_color pl-4 mt-4"
+                className="mt-4 border-4 border-solid border-l-text_color pl-4"
               >
                 {data.message}
               </Typewriter>

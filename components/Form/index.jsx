@@ -36,7 +36,7 @@ const Form = () => {
         EMAILJS_CONFIG.serviceID,
         EMAILJS_CONFIG.templateID,
         templateParams,
-        EMAILJS_CONFIG.publicKey
+        EMAILJS_CONFIG.publicKey,
       )
       .then(
         () => {
@@ -46,14 +46,14 @@ const Form = () => {
         (err) => {
           toast.error("Erro ao enviar mensagem", TOASTFY_CONFIG);
           console.error(err);
-        }
+        },
       )
       .finally(() => setIsSending(false));
   };
 
   return (
     <form className="flex flex-wrap justify-end" onSubmit={submit}>
-      <div className="flex flex-col p-2 w-full sm:w-1/2">
+      <div className="flex w-full flex-col p-2 sm:w-1/2">
         <label htmlFor="name">Nome</label>
         <Input
           type="text"
@@ -64,7 +64,7 @@ const Form = () => {
           required
         />
       </div>
-      <div className="flex flex-col p-2 w-full sm:w-1/2">
+      <div className="flex w-full flex-col p-2 sm:w-1/2">
         <label htmlFor="email">Email</label>
         <Input
           type="email"
@@ -75,7 +75,7 @@ const Form = () => {
           required
         />
       </div>
-      <div className="flex flex-col p-2 w-full">
+      <div className="flex w-full flex-col p-2">
         <label htmlFor="message">Mensagem</label>
         <Input
           isTextarea
