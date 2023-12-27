@@ -89,7 +89,7 @@ const Form = () => {
           required
         ></Input>
       </div>
-      <Button type={"submit"}>
+      <Button type={"submit"} disabled={isSending}>
         {isSending ? (
           <span>
             <SiSpinrilla className="animate-spin" /> Enviando...

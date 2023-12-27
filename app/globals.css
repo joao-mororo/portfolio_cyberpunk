@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 @layer base {
   h1,
@@ -9,12 +11,31 @@
   h4,
   h5,
   h6 {
-    @apply text-primary font-bold;
+    @apply text-primary font-bold cursor-text;
   }
 
   a {
-    @apply text-accent flex gap-[0.3rem] items-center duration-200 hover:opacity-50;
+    @apply text-accent flex gap-[0.3rem] items-center duration-200 hover:opacity-50 cursor-pointer;
   }
+
+  span,
+  p,
+  input,
+  textarea {
+    @apply cursor-text;
+  }
+
+  button,
+  svg,
+  path {
+    @apply cursor-pointer;
+  }
+}
+
+*,
+*:before,
+*:after {
+  @apply cursor-default;
 }
 
 /* there are color variables in tailwind.config.js */

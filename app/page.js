@@ -9,6 +9,8 @@ import Button from "@/components/Button";
 import Box from "@/components/Box";
 import projects from "@/data/projects";
 import experience from "@/data/experience";
+import skills from "@/data/skills";
+import AutoPlay from "@/components/SlickComponents/AutoPlay";
 
 export default function Home() {
   return (
@@ -112,9 +114,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Skills */}
+      <section className="py-12">
+        <h1 className="text-4xl text-center">Habilidades</h1>
+        <BlinkingText className="text-center">• スキル •</BlinkingText>
+        <AutoPlay className="flex my-8">
+          {skills.frontend.map((skill, i) => (
+            <div key={i}>
+              <a
+                className="flex justify-center items-center text-7xl"
+                href={skill.link}
+                target="_blank"
+              >
+                {skill.icon}
+              </a>
+            </div>
+          ))}
+        </AutoPlay>
+        <AutoPlay className="flex my-8" rtl>
+          {skills.backend.map((skill, i) => (
+            <div key={i}>
+              <a
+                className="flex justify-center items-center text-7xl"
+                href={skill.link}
+                target="_blank"
+              >
+                {skill.icon}
+              </a>
+            </div>
+          ))}
+        </AutoPlay>
+      </section>
+
       {/* Projects */}
       <section className="text-center py-12">
-        <h1 className="text-3xl font-bold">
+        <h1 className="text-4xl font-bold">
           Estes são alguns dos meus projetos
         </h1>
         <BlinkingText>• プロジェクト •</BlinkingText>

@@ -28,22 +28,21 @@ const Github = async () => {
           />
         </div>
         <div className="flex justify-center flex-col mt-4">
-          <Typewriter as="h1" manager="decipher" className="text-2xl font-bold">
+          <Typewriter
+            as="h1"
+            manager="decipher"
+            className="text-2xl font-bold mb-1"
+          >
             {user.name}
           </Typewriter>
-          <Typewriter
-            as="a"
-            href="https://github.com/joao-mororo"
-            target="_blank"
-            manager="decipher"
-          >
-            <BsGithub /> {user.login}
+          <Typewriter as="h3" manager="decipher" className="mb-5">
+            <a href="https://github.com/joao-mororo" target="_blank">
+              <BsGithub /> {user.login}
+            </a>
           </Typewriter>
-          <br />
           <Typewriter as="p" manager="decipher">
             {user.bio}
           </Typewriter>
-          <br />
           <ul>
             <Typewriter as="li" manager="decipher">
               {user.followers} seguidores | {user.following} seguindo

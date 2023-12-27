@@ -13,6 +13,12 @@ module.exports = {
         center: true,
         padding: "10%",
       },
+      cursor: {
+        default: "url(/images/Cuberpunk-Cursor/arrow.cur), default",
+        pointer: "url(/images/Cuberpunk-Cursor/link.cur), pointer",
+        wait: "url(/images/Cuberpunk-Cursor/wait.ani), wait",
+        text: "url(/images/Cuberpunk-Cursor/beam.cur), text",
+      },
     },
     colors: {
       transparent: "transparent",

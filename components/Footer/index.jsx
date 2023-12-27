@@ -26,23 +26,22 @@ const Footer = () => {
         </div>
         <div className="flex justify-center items-center gap-4 mt-4 sm:mt-0">
           <a
-            className="text-2xl hover:opacity-50"
+            className="text-2xl hover:opacity-50 cursor-pointer"
             href="https://github.com/joao-mororo"
             target="_blank"
           >
             <BsGithub />
           </a>
           <a
-            className="text-2xl hover:opacity-50"
+            className="text-2xl hover:opacity-50 cursor-pointer"
             href="https://www.linkedin.com/in/joaovitormororo/"
             target="_blank"
           >
             <BsLinkedin />
           </a>
           <a
-            className="text-2xl hover:opacity-50"
+            className="text-2xl hover:opacity-50 cursor-pointer"
             onClick={() => copyDiscord()}
-            style={{ cursor: "pointer" }}
           >
             <BsDiscord />
           </a>
