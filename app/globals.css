@@ -11,11 +11,11 @@
   h4,
   h5,
   h6 {
-    @apply text-primary font-bold cursor-text;
+    @apply cursor-text font-bold text-primary;
   }
 
   a {
-    @apply text-accent flex gap-[0.3rem] items-center duration-200 hover:opacity-50 cursor-pointer;
+    @apply flex cursor-pointer items-center gap-[0.3rem] text-accent duration-200 hover:opacity-50;
   }
 
   span,
@@ -23,6 +23,11 @@
   input,
   textarea {
     @apply cursor-text;
+  }
+
+  button > *,
+  a > * {
+    @apply cursor-pointer;
   }
 
   button,

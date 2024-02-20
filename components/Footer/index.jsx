@@ -3,13 +3,11 @@
 import React from "react";
 import CyberpunkFont from "../CyberpunkFont";
 import { BsGithub, BsLinkedin, BsDiscord } from "react-icons/bs";
-import { toast } from "react-toastify";
-import { TOASTFY_CONFIG } from "@/data/contants";
-
+// import * as toast from "@/components/ToastComponent";
 const Footer = () => {
   const copyDiscord = () => {
     navigator.clipboard.writeText("sleepingbtw");
-    toast.info("Usuário copiado", TOASTFY_CONFIG);
+    // toast.info("Usuário copiado");
   };
 
   return (

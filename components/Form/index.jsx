@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Button from "../Button";
 import Input from "./Input";
 import emailjs from "@emailjs/browser";
-import { EMAILJS_CONFIG, TOASTFY_CONFIG } from "@/data/contants";
-import { toast } from "react-toastify";
+// import * as toast from "@/components/ToastComponent";
+import { EMAILJS_CONFIG } from "@/data/contants";
 import { SiSpinrilla } from "react-icons/si";
 
 const Form = () => {
@@ -40,11 +40,12 @@ const Form = () => {
       )
       .then(
         () => {
-          toast.success("Mensagem enviada", TOASTFY_CONFIG);
+          // toast.success("Mensagem enviada");
+          console.log("Mensagem enviada");
           clear();
         },
         (err) => {
-          toast.error("Erro ao enviar mensagem", TOASTFY_CONFIG);
+          // toast.error("Erro ao enviar mensagem");
           console.error(err);
         },
       )

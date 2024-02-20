@@ -22,7 +22,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="pt" className="scroll-smooth">
       <body className={`${vt323.variable} ${electrolize.className} ${share_tech_mono.variable} ${cyberpunk.variable} text-text_color bg-background`}>
         <SoundsProvider />
         <ScrollToTop />

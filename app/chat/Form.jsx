@@ -1,70 +1,47 @@
-"use client";
-
-import React, { useState } from "react";
-import Button from "@/components/Button";
-import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
-import { TOASTFY_CONFIG } from "@/data/contants";
-import { SiSpinrilla } from "react-icons/si";
+import { revalidateTag } from "next/cache";
+import SubmitButton from "./SubmitButton";
+import apiFetch from "@/functions/apiFetch";
+import * as toast from "@/components/ToastComponent";
 
 const Form = () => {
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-  const [isSending, setIsSending] = useState(false);
-  const router = useRouter();
+  const submit = async (form) => {
+    "use server";
 
-  const cleatInputs = () => {
-    setName("");
-    setMessage("");
-  };
-
-  const submit = async (e) => {
-    e.preventDefault();
-    setIsSending(true);
     try {
-      await fetch("api/chat/post", {
+      await apiFetch("api/chat/post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: name,
-          message: message,
+          name: form.get("name"),
+          message: form.get("message"),
         }),
       }).then(async (res) => {
         const result = await res.json();
 
-        // trocar os alerts por toasts
         if (result.status === 201) {
-          toast.success(result.message, TOASTFY_CONFIG);
-          router.refresh();
+          // toast.success(result.message);
+          console.log(result.message);
+          revalidateTag("get-messages");
         } else {
-          toast.error(result.message, TOASTFY_CONFIG);
+          // toast.error(result.message);
+          console.error(result.message);
         }
-
-        setIsSending(false);
-        cleatInputs();
       });
     } catch (error) {
       console.error(error);
-      setIsSending(false);
-      cleatInputs();
     }
   };
 
   return (
-    <form
-      className="flex w-full flex-col gap-4 sm:w-2/3"
-      onSubmit={(e) => submit(e)}
-    >
+    <form className="flex w-full flex-col gap-4 sm:w-2/3" action={submit}>
       <div className="flex flex-col">
         <label htmlFor="name">Nome</label>
         <input
           className="resize-none border-none bg-black p-4 text-accent outline-none"
           type="text"
-          id="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          name="name"
           required
         />
       </div>
@@ -73,23 +50,12 @@ const Form = () => {
         <textarea
           className="resize-none border-none bg-black p-4 text-accent outline-none"
           name="message"
-          id="message"
           cols="30"
           rows="5"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
           required
         ></textarea>
       </div>
-      <Button type="submit" disabled={isSending}>
-        {isSending ? (
-          <span>
-            <SiSpinrilla className="animate-spin" /> Enviando...
-          </span>
-        ) : (
-          <span>Enviar</span>
-        )}
-      </Button>
+      <SubmitButton />
     </form>
   );
 };
